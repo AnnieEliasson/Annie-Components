@@ -1,0 +1,13 @@
+@import "./color.scss";
+@import "./Components/Modal/Modal";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw; 
+}

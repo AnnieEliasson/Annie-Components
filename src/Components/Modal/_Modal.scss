@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Anton&display=swap");
+
+.ModalBox {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.692);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  transform: translateY(-100%);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  transition: .2s ease-out;
+
+  .Modal {
+    font-family: "Annie Use Your Telescope";
+    letter-spacing: 2px;
+    border: 1px solid $accent-color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+    background-color: $modal-bg-color;
+    background: linear-gradient(120deg, $modal-bg-color, rgb(30, 30, 30));
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    display: none;
+    width: 500px;
+    padding: 30px;
+    position: relative;
+    
+
+    h3 {
+      padding: 0;
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 20px 0px;
+    }
+
+    .x-btn {
+      background-color: transparent;
+      color: $text-color;
+      border: 0;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    .left{
+        display: flex;
+        justify-content: left;
+    }
+    .center{
+            display: flex;
+            justify-content: center;
+    }
+
+    .right {
+        display: flex;
+        justify-content: right;
+    }
+
+    button {
+      
+        padding: 5px;
+        border: 1px solid $accent-color;
+        background-color: rgb(58, 58, 58);
+        background: linear-gradient(
+          to bottom,
+          rgb(136, 136, 136),
+          rgb(55, 68, 87)
+        );
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px black, inset 1px 1px 5px white,
+          inset -2px -2px 2px $accent-color;
+        transition: all 0.2s ease-in-out;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 1px black;
+        font-family: "Annie Use Your Telescope";
+        font-weight: bolder;
+        letter-spacing: 2px;
+
+        &:hover {
+          color: $accent-color;
+        }
+
+        &:active {
+          background: linear-gradient(to top, white, rgb(82, 82, 82));
+          box-shadow: inset 1px 1px 5px $accent-color, inset -2px -2px 2px white;
+        }
+      }
+
+      .close{
+        margin-left: 10px;
+      }
+  }
+
+  .show-modal{
+    display: block;
+    animation: modal .5s ease-out forwards;
+  }
+
+  
+}
+.show-box{
+    transform: translateY(0%);
+  }
+
+@keyframes modal {
+  from {transform: scale(.7);}
+  to{transform: scale(1);}
+}
+
