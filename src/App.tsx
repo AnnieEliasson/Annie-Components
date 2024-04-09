@@ -4,7 +4,6 @@ import ItemScrollBar from "./Components/ItemScrollBar/ItemScrollBar";
 import ModalBox from "./Components/Modal/ModalBox/ModalBox";
 
 function App() {
-
   const handleClickModal = () => {
     const modalBox = document.querySelector(".ModalBox") as HTMLElement;
     const modal = document.querySelector(".Modal") as HTMLElement;
@@ -14,14 +13,24 @@ function App() {
 
   return (
     <>
-      <h1>hello</h1>
 
       <h3>ItemScrollBar</h3>
-      <ItemScrollBar items={['🍕', '🍔', '🍟', '🍗', '🍖', '🍝']} />
+      <ItemScrollBar items={["🍕", "🍔", "🍟", "🍗", "🍖", "🍝"]} />
 
       <h3>CheckBoxes</h3>
-      <CheckBoxes items={["Testar", "Lite", "Checkboxes", "Testing", "Sködpadda", "Ninja Turtles"]} boxToRight={true} lightmode={false} />
-      
+      <CheckBoxes
+        items={[
+          "Testar",
+          "Lite",
+          "Checkboxes",
+          "Testing",
+          "Sködpadda",
+          "Ninja Turtles",
+        ]}
+        boxToRight={true}
+        lightmode={false}
+      />
+
       <ModalBox
         buttonPlacement={"left"}
         title={"En rubrik av något slag"}

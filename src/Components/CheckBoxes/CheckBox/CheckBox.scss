@@ -1,66 +1,67 @@
-.CheckBox{
-    display: none;
+.CheckBox {
+  display: none;
 }
 
-.CheckBoxLable{
-    background-color: #343434;
-    border: 0px solid $accent-color;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    transition: .8s;
-    font-size: 1.8rem;
-    text-shadow: 2px 2px 2px black;
-    
+.CheckBoxLable {
+  background-color: #343434;
+  border: 0px solid $accent-color;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: 0.8s;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 2px black;
 
-    &:hover{
-        box-shadow: inset 2px 2px 2px white, inset -2px -2px 2px black; 
-        letter-spacing: 2px;
-    }
+  &:hover {
+    box-shadow: inset 2px 2px 2px white, inset -2px -2px 2px black;
+    letter-spacing: 2px;
+  }
 }
 
-.box-right{
-    flex-direction: row-reverse;
-    justify-content: space-between;
+.box-right {
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
-.checkmark-box{
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: transparent;
-    box-shadow: inset 2px 2px 2px black, inset -2px -2px 2px white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 1s;
-
-    
+.checkmark-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: transparent;
+  box-shadow: inset 2px 2px 2px black, inset -2px -2px 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
 }
 
-.checkmark-box::before{
-    content: "✓";
-    font-size: 4rem;
-    color: $accent-color;
-    opacity: 0;
-    transition: 1s;
-    text-shadow: 2px 2px 2px black;
-    
+.checkmark-box::before {
+  content: "✓";
+  font-size: 4rem;
+  color: $accent-color;
+  opacity: 0;
+  transition: .5s;
+  text-shadow: 2px 2px 2px black;
 }
 
 input:checked + .checkmark-box:before {
-    opacity:1;
-    transform:scale(1);
-  }
+  opacity: 1;
+  transform: scale(1);
+  animation: rotate .5s ease-in-out forwards;
+}
 
-.lightmode{
-    background-color: rgb(230, 230, 230);
-    color: black;
-    text-shadow: none;
-    
+.lightmode {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  text-shadow: none;
+}
+
+@keyframes rotate {
+    from{transform: rotate(180deg) scale(0);}
+    to{transform: rotate(360deg) scale(1);}
 }

@@ -1,13 +1,13 @@
-
 type PropList = {
-    item: string;
-}
+  item: string;
+};
 
-const Item = ({item}: PropList) => {
-
+const Item = ({ item }: PropList) => {
   return (
-    <li className="item-slot"><div className="item">{item}</div></li>
-  )
-}
+    <li className="item-slot">
+      <div className="item">{item}</div>
+    </li>
+  );
+};
 
-export default Item
+export default Item;
