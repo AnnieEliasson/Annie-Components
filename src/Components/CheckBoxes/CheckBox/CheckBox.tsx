@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 type PropList = {
   i: string;
   boxToRight: boolean;
@@ -5,6 +7,24 @@ type PropList = {
 };
 
 const CheckBox = ({ i, boxToRight, lightmode }: PropList) => {
+  const input = useRef<HTMLInputElement | null>(null);
+
+  const handleChange = () => {
+    if (input.current?.id === "- Check All -") {
+      let allBoxes: NodeListOf<HTMLInputElement> =
+        document.querySelectorAll(".CheckBox");
+
+      if (input.current.checked) {
+        allBoxes.forEach((box) => {
+          box.checked = true;
+        });
+      } else {
+        allBoxes.forEach((box) => {
+          box.checked = false;
+        });
+      }
+    }
+  };
   return (
     <>
       <label
@@ -13,7 +33,14 @@ const CheckBox = ({ i, boxToRight, lightmode }: PropList) => {
         }`}
         htmlFor={i}
       >
-        <input className="CheckBox" type="checkbox" name={i} id={i} />
+        <input
+          ref={input}
+          onChange={handleChange}
+          className="CheckBox"
+          type="checkbox"
+          name={i}
+          id={i}
+        />
         <span className="checkmark-box"></span>
         {i}
       </label>

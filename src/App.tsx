@@ -13,22 +13,16 @@ function App() {
 
   return (
     <>
-
       <h3>ItemScrollBar</h3>
       <ItemScrollBar items={["🍕", "🍔", "🍟", "🍗", "🍖", "🍝"]} />
 
       <h3>CheckBoxes</h3>
+
       <CheckBoxes
-        items={[
-          "Testar",
-          "Lite",
-          "Checkboxes",
-          "Testing",
-          "Sködpadda",
-          "Ninja Turtles",
-        ]}
+        items={["Testar", "Lite", "Checkboxes", "Testing", "Ninja Turtles"]}
         boxToRight={true}
         lightmode={false}
+        checkAll={true}
       />
 
       <ModalBox
