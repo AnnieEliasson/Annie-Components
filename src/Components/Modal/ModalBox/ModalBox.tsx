@@ -6,6 +6,8 @@ type PropList = {
   text: string;
   buttonText: string;
   closeButton: boolean;
+  modal: boolean;
+  setModal: any;
 };
 
 const ModalBox = ({
@@ -14,17 +16,22 @@ const ModalBox = ({
   text,
   buttonText,
   closeButton,
+  modal,
+  setModal
 }: PropList) => {
   return (
-    <div className="ModalBox">
-      <Modal
-        buttonPlacement={buttonPlacement}
-        title={title}
-        text={text}
-        buttonText={buttonText}
-        closeButton={closeButton}
-      />
-    </div>
+    modal && (
+      <div className="ModalBox">
+        <Modal
+        setModal={setModal}
+          buttonPlacement={buttonPlacement}
+          title={title}
+          text={text}
+          buttonText={buttonText}
+          closeButton={closeButton}
+        />
+      </div>
+    )
   );
 };
 

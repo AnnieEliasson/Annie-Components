@@ -6,6 +6,7 @@ type PropList = {
   text: string;
   buttonText: string;
   closeButton: boolean;
+  setModal: any;
 };
 
 const Modal = ({
@@ -14,12 +15,10 @@ const Modal = ({
   text,
   buttonText,
   closeButton,
+  setModal,
 }: PropList) => {
   const handleClick = () => {
-    const modalBox = document.querySelector(".ModalBox") as HTMLElement;
-    modalBox.classList.remove("show-box");
-    const modal = document.querySelector(".Modal") as HTMLElement;
-    modal.classList.remove("show-modal");
+    setModal(false);
   };
 
   return (
@@ -30,11 +29,11 @@ const Modal = ({
 
       <div className={buttonPlacement}>
         <button>{buttonText}</button>
-        {closeButton &&
+        {closeButton && (
           <button className="close" onClick={handleClick}>
             Close
           </button>
-        }
+        )}
       </div>
     </div>
   );

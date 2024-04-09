@@ -8,7 +8,6 @@
   left: 0;
   bottom: 0;
   display: flex;
-  transform: translateY(-100%);
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(2px);
@@ -17,17 +16,17 @@
   .Modal {
     font-family: "Annie Use Your Telescope";
     letter-spacing: 2px;
-    border: 1px solid $accent-color;
+    border: 2px solid $accent-color;
     border-radius: 10px;
     box-shadow: 0px 0px 5px black;
     background-color: $modal-bg-color;
     background: linear-gradient(120deg, $modal-bg-color, rgb(30, 30, 30));
     color: white;
     text-shadow: 1px 1px 2px black;
-    display: none;
     width: 500px;
     padding: 30px;
     position: relative;
+    animation: modal 0.3s ease-out forwards;
 
     h3 {
       padding: 0;
@@ -51,7 +50,7 @@
 
       &:hover {
         color: $accent-color;
-        animation: rotate-x .3s ease-out forwards;
+        animation: rotate-x 0.3s ease-out forwards;
       }
     }
 
@@ -114,14 +113,18 @@
 
 @keyframes modal {
   from {
-    transform: scale(0.7);
+    transform: scale(0) rotate(90deg);
   }
   to {
-    transform: scale(1);
+    transform: scale(1) rotate(360deg);
   }
 }
 
 @keyframes rotate-x {
-  from {transform: rotate(0deg);}
-  to{transform: rotate(90deg) scale(1.5);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg) scale(1.5);
+  }
 }
