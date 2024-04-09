@@ -1,4 +1,6 @@
 import "./App.scss";
+import CheckBoxes from "./Components/CheckBoxes/CheckBoxes";
+import ItemScrollBar from "./Components/ItemScrollBar/ItemScrollBar";
 import ModalBox from "./Components/Modal/ModalBox/ModalBox";
 
 function App() {
@@ -14,14 +16,19 @@ function App() {
     <>
       <h1>hello</h1>
 
+      <h3>ItemScrollBar</h3>
+      <ItemScrollBar items={['🍕', '🍔', '🍟', '🍗', '🍖', '🍝']} />
+
+      <h3>CheckBoxes</h3>
+      <CheckBoxes items={["Testar", "Lite", "Checkboxes", "Testing", "Sködpadda", "Ninja Turtles", "Måsulv", "Indianer", "Cowcoys", "Astronaut"]} boxToRight={true} lightmode={false} />
+      
       <ModalBox
         buttonPlacement={"left"}
         title={"En rubrik av något slag"}
         text={"här kommer text, hej å hå, kämpa på!"}
         buttonText={"Tryck på knappen"}
-        closeButton={false}
+        closeButton={true}
       />
-
       <button onClick={handleClickModal}>Modal</button>
     </>
   );

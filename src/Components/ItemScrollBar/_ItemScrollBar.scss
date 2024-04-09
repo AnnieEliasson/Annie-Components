@@ -1,0 +1,50 @@
+.ItemScrollBar {
+  border: 0px solid black;
+  width: fit-content;
+
+  ul {
+    background-color: rgb(41, 41, 41);
+    border: 2px solid $accent-color;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px black;
+
+    .item-slot {
+      background-color: rgb(201, 205, 170);
+      background: linear-gradient(130deg, rgb(77, 46, 32), rgb(28, 28, 28));
+      border: 1px solid black;
+      border-radius: 8px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 2px 2px black, inset 1px 1px 1px white;
+      filter: saturate(50%);
+
+      .item {
+        background-color: grey;
+        background: linear-gradient(130deg, rgb(0, 0, 0), rgb(130, 155, 165));
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 95%;
+        height: 95%;
+        box-shadow: inset -2px -2px 2px white, inset 2px 2px 2px black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+      }
+    }
+
+    .active {
+      filter: saturate(100%);
+
+      .item {
+        background: linear-gradient(130deg, $accent-color, rgb(0, 0, 0));
+      }
+    }
+  }
+}
