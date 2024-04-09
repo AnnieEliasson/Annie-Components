@@ -20,7 +20,7 @@ function App() {
       <ItemScrollBar items={['🍕', '🍔', '🍟', '🍗', '🍖', '🍝']} />
 
       <h3>CheckBoxes</h3>
-      <CheckBoxes items={["Testar", "Lite", "Checkboxes", "Testing", "Sködpadda", "Ninja Turtles", "Måsulv", "Indianer", "Cowcoys", "Astronaut"]} boxToRight={true} lightmode={false} />
+      <CheckBoxes items={["Testar", "Lite", "Checkboxes", "Testing", "Sködpadda", "Ninja Turtles"]} boxToRight={true} lightmode={false} />
       
       <ModalBox
         buttonPlacement={"left"}
