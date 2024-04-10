@@ -3,13 +3,10 @@ import "./App.scss";
 import CheckBoxes from "./Components/CheckBoxes/CheckBoxes";
 import ItemScrollBar from "./Components/ItemScrollBar/ItemScrollBar";
 import ModalBox from "./Components/Modal/ModalBox/ModalBox";
-
-
+import Button from "./Components/Button/Button";
 
 function App() {
-  
-
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false);
 
   return (
     <>
@@ -25,6 +22,8 @@ function App() {
         checkAll={true}
       />
 
+      <Button name={"Modal"} modal={modal} setModal={setModal} />
+
       <ModalBox
         modal={modal}
         setModal={setModal}
@@ -34,7 +33,7 @@ function App() {
         buttonText={"Tryck på knappen"}
         closeButton={true}
       />
-      <button onClick={()=>{setModal(!modal)}}>Modal</button>
+      {/* <button onClick={()=>{setModal(!modal)}}>Modal</button> */}
     </>
   );
 }
