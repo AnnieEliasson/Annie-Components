@@ -1,7 +1,7 @@
 type PropList = {
     name: string;
-    modal: boolean;
-    setModal: any;
+    modal?: boolean;
+    setModal?: any;
 }
 
 const Button = ({name, modal, setModal }: PropList) => {

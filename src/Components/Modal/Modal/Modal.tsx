@@ -1,5 +1,4 @@
 import { AiOutlineClose } from "react-icons/ai";
-
 type PropList = {
   buttonPlacement: "left" | "center" | "right";
   title: string;
